@@ -144,6 +144,7 @@ li {
 .mail-box {
   border: 2px solid white;
   padding: 20px;
+  border-radius: 8px;
   max-width: 20rem;
 }
 
@@ -177,4 +178,11 @@ textarea {
 
 button {
   background-color: #535bf2;
+}
+
+
+.letter-card {
+  border: solid 1px #f2f2f2;
+  padding: 2rem;
+  border-radius: 8px;
 }

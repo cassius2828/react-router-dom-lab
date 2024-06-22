@@ -101,7 +101,7 @@ const App = () => {
           path="/mailboxes/:mailboxId"
           element={
             <ErrorBoundary>
-              <MailboxDetails mailboxes={mailboxes} />
+              <MailboxDetails mailboxes={mailboxes} letters={letters} />
             </ErrorBoundary>
           }
         />

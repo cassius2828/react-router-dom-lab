@@ -1,28 +1,42 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+
+///////////////////////////
+// Initial form data state
+///////////////////////////
 const initialFormData = {
   boxholder: "",
   boxSize: "default",
 };
+
+
 const MailboxForm = ({ addMailbox }) => {
   const [formData, setFormData] = useState(initialFormData);
-//   navigate programmatically 
+
+  //   navigate programmatically
   const navigate = useNavigate();
-//   handle form change
+
+  ///////////////////////////
+  // Handle form change
+  ///////////////////////////
   const handleFormChange = ({ target }) => {
     setFormData({ ...formData, [target.name]: target.value });
   };
-//   handle submit
+
+  ///////////////////////////
+  // Handle form submit
+  ///////////////////////////
   const handleSubmit = (e) => {
     e.preventDefault();
     // ensure form is filled out
-    if (!formData.boxholder || formData.boxSize === 'default') {
+    if (!formData.boxholder || formData.boxSize === "default") {
       return alert("Please fill out all fields");
     }
 
     addMailbox(formData);
     navigate("/mailboxes");
   };
+
   return (
     <form>
       <label htmlFor="boxholder">Enter a Boxholder:</label>
@@ -54,4 +68,5 @@ const MailboxForm = ({ addMailbox }) => {
     </form>
   );
 };
+
 export default MailboxForm;

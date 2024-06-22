@@ -66,7 +66,7 @@ const LetterForm = ({ addLetter, mailboxes }) => {
     }
 
     addLetter(formData);
-    console.log(formData, " <-- form data");
+  
     // navigate to the users mailbox
     navigate(`/mailboxes/${formData.mailboxId}`);
   };
